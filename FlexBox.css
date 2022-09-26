@@ -1,0 +1,51 @@
+.mainContainer{
+    display: flex;
+    text-align: left;
+    background-color: rgb(51, 218, 190);
+}
+.First{
+    border: 5px solid rgb(47, 196, 255);
+    padding: 10px;
+    font-weight: bold ;
+}
+.Second{
+    border: 5px solid rgb(47, 196, 255);
+    padding: 10px;
+    font-weight: bold ;
+}
+.Third{
+    border: 5px solid rgb(47, 196, 255);
+    padding: 10px;
+    font-weight: bold ;
+}
+.headerContainer{
+    color: black;
+    background-color: #ff4700f2;
+    text-align: center;
+    padding: 20px;
+}
+.CenterMainContainer{
+    background-color: aqua;
+    padding: 20 px;
+    width: 60%;
+}
+.footerContainer{
+    background-color: #528912eb;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.leftMainContainer{
+    background-color: #bbbb07;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    width: 20%;
+}
+.RightMainContainer{
+    background-color: #cd527f;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    width: 20%;
+}

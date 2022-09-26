@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="InputForm.css"
+    />
+    <title>Input Form</title>
+  </head>
+  <body>
+    <form onsubmit="submitMsg()">
+      <header class="headerContainer">
+        <h1>HTML5 Form Input Fields</h1>
+      </header>
+      <div>
+        <label for="name">Enter the Name: </label>
+        <input type="text" id="name" name="name" placeholder="Name" required />
+        <error-output class="text-error" for="name"></error-output>
+      </div>
+      <div>
+        <label for="pwd">Enter the Password: </label>
+        <input
+          type="password"
+          id="pwd"
+          name="pwd"
+          placeholder="Password"
+          required
+        />
+        <error-output class="pwd-Error" for="pwd"></error-output>
+      </div>
+      <div>
+        <label for="emailID">Enter the Email ID: </label>
+        <input type="email" id="emailID" name="emailID" placeholder="E-mail" />
+        <error-output class="email-Error" for="emailID"></error-output>
+      </div>
+      <div>
+        <label for="companyURL">Enter the Company URL: </label>
+        <input type="url" name="companyURL" placeholder="Company URL" />
+      </div>
+      <div>
+        <label for="phoneNumber">Enter the Phone Number: </label>
+        <input
+          type="tel"
+          id="phoneNumber"
+          name="phoneNumber"
+          min="10"
+          placeholder="Phone Number"
+          required
+        />
+        <error-output class="phone-Error" for="phoneNumber"></error-output>
+      </div>
+      <div>
+        <label for="Search">Search Input Type: </label>
+        <input
+          type="search"
+          id="Search"
+          name="Search"
+          placeholder="Search Input Here"
+        />
+      </div>
+      <div>
+        <label for="DateAndTime">Choose Date and Time: </label>
+        <input
+          type="datetime-local"
+          id="DateAndTime"
+          name="DateAndTime"
+          placeholder="Date and Time"
+        />
+      </div>
+
+      <div>
+        <p1>Gender: </p1>
+        <div class="GenderContainer">
+          <input type="radio" id="M" name="Gender" value="Male" />
+          <label for="M">Male</label>
+          <input type="radio" id="F" name="Gender" value="Female" />
+          <label for="F">Female</label>
+          <input type="radio" id="Others" name="Gender" value="Others" />
+          <label for="Others">Others</label>
+        </div>
+      </div>
+      <div>
+        <label for="Salary">Choose Your Salary: </label>
+        <input
+          type="range"
+          id="Salary"
+          name="Salary"
+          min="300000"
+          max="500000"
+          step="5000"
+          value="350000"
+        />
+        <output class="salary-output" for="Salary">400000</output>
+      </div>
+      <div>
+        <button>Submit</button>
+        <p id="demo"></p>
+      </div>
+      <script>
+        const text = document.querySelector("#name");
+        const textError = document.querySelector(".text-error");
+        text.addEventListener("input", function () {
+          let nameRegex = new RegExp("^[A-Z]{1}[a-z]{2,}$");
+          if (nameRegex.test(text.value)) {
+            textError.textContent = "";
+          } else {
+            textError.textContent =
+              "Name should have min 3 characters and start with Capital letters.";
+          }
+        });
+        const salary = document.querySelector("#Salary");
+        const output = document.querySelector(".salary-output");
+        output.textContent = salary.value;
+        salary.addEventListener("input", function () {
+          output.textContent = salary.value;
+        });
+        const passWrd = document.querySelector("#pwd");
+        const pwdError = document.querySelector(".pwd-Error");
+        passWrd.addEventListener("input", function () {
+          let pwdRegex = RegExp(
+            "^(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z1-9]{1}[a-zA-Z0-9]{7,}"
+          );
+          if (pwdRegex.test(passWrd.value)) {
+            pwdError.textContent = "";
+          } else {
+            pwdError.textContent =
+              "Password should contain at least one special character,one Capital word,one numeric value";
+          }
+        });
+        const mail = document.querySelector("#emailID");
+        const emailError = document.querySelector(".email-Error");
+        mail.addEventListener("input", function () {
+          let mailRegex = RegExp(
+            "^[a-zA-Z0-9]+([\.\+\-][a-zA-Z0-9]+)?@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,}(\.[a-zA-Z]+)?)$"
+          );
+          if (mailRegex.test(mail.value)) {
+            emailError.textContent = "";
+          } else {
+            emailError.textContent = "Email pattern is incorrect";
+          }
+        });
+        const phone = document.querySelector("#phoneNumber");
+        const phnError = document.querySelector(".phone-Error");
+        phone.addEventListener("input", function () {
+          let phoneRegex = RegExp("^91[ ][5-9]{1}[0-9]{9}$");
+          if (phoneRegex.test(phone.value)) {
+            phnError.textContent = "";
+          } else {
+            phnError.textContent = "Phone Pattern is incorrect";
+          }
+        });
+        function submitMsg() {
+          alert("Form Submitted Successfully");
+        }
+      </script>
+    </form>
+  </body>
+</html>

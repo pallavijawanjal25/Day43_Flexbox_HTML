@@ -1,0 +1,55 @@
+.headerContainer{
+    display: flex;
+    flex-flow: column wrap;
+    font-weight: bold;
+    background-color: #ff4500;
+    align-content: center;
+    margin-bottom: 20px;
+}
+error-output{
+    font-size: xx-small;
+    color: #ff4500;
+    width: auto;
+}
+.GenderContainer{
+    color: blueviolet;
+    display: flex;
+    font-size: larger;
+    justify-content: initial;
+    width: 330px;
+    margin-top: 5px;
+}   
+form{
+    margin-top: 50px;
+    border: groove;
+}
+
+button{
+    width: 70%;
+    margin: 0 auto;
+}
+body{
+    width: 200%;
+    max-width:600px;
+    margin: 0px auto;
+    padding: 2em;
+}
+input{
+    flex: auto;
+}
+label{
+    width: 40%;
+}
+div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+html{   
+    font-family: sans-serif;
+}
+label,input,button{
+    font-size: 16px;
+    line-height: 1.5;
+}
